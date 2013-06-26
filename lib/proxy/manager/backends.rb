@@ -12,8 +12,7 @@ module Proxy
       end
  
       def vacant
-        # TODO: Add balancing strategies
-        backends.last
+        backends.sort_by { |backend| backend.connection_counter.value }.first
       end
     end
   end
