@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.4)
+    em (0.0.1)
+      eventmachine
+    eventmachine (1.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  addressable
+  em
