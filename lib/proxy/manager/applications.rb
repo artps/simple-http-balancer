@@ -1,8 +1,8 @@
 module Proxy
   module Manager
     class Applications
-      def initialize(options)
-        @options = options
+      def initialize
+        @config = Proxy::DSL::Configurator.config
       end
 
       def run
@@ -12,8 +12,8 @@ module Proxy
       end
 
       def applications
-        @applications ||= @options.map do |app_name, options|
-          Application.new(app_name, options)
+        @applications ||= @config.servers.map do |config|
+          Application.new(config)
         end
       end
     end

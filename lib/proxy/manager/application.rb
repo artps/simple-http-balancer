@@ -1,27 +1,18 @@
 module Proxy
   module Manager
     class Application
-      def initialize(name, options)
-        @name = name
-        @options = options
+      def initialize(config)
+        @config = config
       end
 
       def run
-        EM::start_server(host, port, Balancer::Frontend) do |frontend|
+        EM::start_server(@config.listen, @config.port, Balancer::Frontend) do |frontend|
           frontend.bind_manager(backends.vacant)
         end
       end
 
-      def host
-        @options[:host]
-      end
-
-      def port
-        @options[:port]
-      end
-
       def backends
-        @backends ||= Backends.new(@options[:backends])
+        @backends ||= Backends.new(@config.backends)
       end
     end
   end

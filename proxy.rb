@@ -8,6 +8,8 @@ $: << File.join(File.dirname(__FILE__), 'lib')
 require 'proxy'
 require 'yaml'
 
+require './config'
+
 class HttpProxy
   class << self
 
@@ -17,7 +19,7 @@ class HttpProxy
         trap('TERM') { stop }
         trap('INT')  { stop }
 
-        Proxy::Manager::Applications.new(options).run
+        Proxy::Manager::Applications.new.run
       end
     end
 
