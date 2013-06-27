@@ -13,7 +13,7 @@ require './config'
 class MySuperBalancer
   class << self
 
-    def run(options)
+    def run
       EM.epoll
       EM.run do
         trap('TERM') { stop }
