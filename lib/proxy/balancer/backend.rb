@@ -21,11 +21,7 @@ module Proxy
       end
 
       def receive_data(data)
-        # TODO: Fix processors
-        #data = @manager.options.processors.call(data)
-        #if data
         @frontend.send_data(data)
-        #end
       end
 
       def unbind

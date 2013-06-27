@@ -4,12 +4,12 @@ class Alert < Proxy::Processor::Base
   end
 
   def pre(env)
-    # Add wanted logic
+    # Add your logic
     puts env
   end
 
   def post(env)
-    # Add wanted logic
+    # Add your logic
     puts env
   end
 end

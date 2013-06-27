@@ -10,7 +10,7 @@ module Proxy
       end
   
       def call(env = nil)
-        app.call(nil)
+        app.call(env)
       end
   
       def app
