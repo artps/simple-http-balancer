@@ -10,7 +10,7 @@ require 'yaml'
 
 require './config'
 
-class HttpProxy
+class MySuperBalancer
   class << self
 
     def run(options)
@@ -31,6 +31,5 @@ class HttpProxy
 end
 
 if __FILE__ == $0
-  options = YAML.load_file('settings.yml')
-  HttpProxy.run(options)
+  MySuperBalancer.run
 end
