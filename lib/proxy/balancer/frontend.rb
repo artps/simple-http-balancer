@@ -7,6 +7,7 @@ module Proxy
 
       def receive_data(data)
         @managers.each do |manager|
+          manager.processors.call(data)
           manager.backend.send_data(data)
         end
       end
