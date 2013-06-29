@@ -3,6 +3,8 @@ simple-http-balancer
 
 This is really simple pure-ruby HTTP (not only) load-balancer. Look into proxy.rb for usage example.
 
+Self-contained solutions like haproxy are great for many HTTP load-balancing needs. However, sometimes you really want increased programmatic control over the balancing (for example, if you wanted to have a dynamic set of allowed backends, or if you wanted to log where each request is routed within your main application).
+
 Installation & Running
 ====================
 
